@@ -11,7 +11,9 @@ router.get('/', async(req, res, next)=> {
   const usuario= await Usuario.find(function(err,usuario){
  
    if(err){next(err)}
+   Promise.resolve(
    res.json(usuario)
+   )
   })
  
  }); 
